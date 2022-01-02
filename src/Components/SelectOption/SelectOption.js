@@ -1,51 +1,30 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
+import InputLabel from "@mui/material/InputLabel";
 
-export  function SelectOption({Options}) {
-  const [Value, SetValue] = React.useState('');
-  const [open, setOpen] = React.useState(false);
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
-  const handleChange = (event) => {
-    SetValue(event.target.value);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
+export function SelectOption({
+  value,
+  option,
+  label = "select your Option",
+  children,
+}) {
+  const handelOption = (e) => {
+    value(e.target.value);
   };
 
   return (
-    <div>
-      <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
-        Open the select
-      </Button>
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="data">Choose an Option </InputLabel>
-        <Select
-          labelId="Selct Data"
-          id="Selct Data"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={Value}
-          label="Value"
-          onChange={handleChange}
-        >
-{Options.map((e)=>(
-           <>
-          <MenuItem value={e}>{e}</MenuItem>
-          </>
-          ))}
-          
-        </Select>
-      </FormControl>
-    </div>
+    <FormControl fullWidth>
+      <InputLabel id="demo-simple-select-label">{label}</InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        onChange={handelOption}
+      >
+        {option.map((el) => (
+          <option vlaue={el}>{el}</option>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

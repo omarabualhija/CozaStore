@@ -1,5 +1,3 @@
-
-      export  const backgroundColor={
-        purple :"#717fe0",
-
-    }
+export const backgroundColor = {
+  purple: "#717fe0",
+};

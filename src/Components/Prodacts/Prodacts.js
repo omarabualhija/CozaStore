@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Products, Filters, Cards, Search } from "./Styled";
 import { Link } from "react-router-dom";
-export function Prodacts() {
-  const [toggleFilter, setToggleFilter] = useState(false);
-  const [limitList, setLimetList] = useState(9);
-  const ProductsData = useSelector((state) => state.productData);
-  const [filteredData, setFilterdData] = useState([]);
-  const [activeFilter, setActiveFilter] = useState("All Products");
+import { Button } from "../btn/Button";
 
+export function Prodacts(props) {
+  const [toggleFilter, setToggleFilter] = useState(false); //to Show serch box
+  const ProductsData = useSelector((state) => state.productData); //get card product data
+  const [filteredData, setFilterdData] = useState([]); // State to display the data after filtering
+  const [activeFilter, setActiveFilter] = useState("All Products"); //btn filter
+  //func search box
   const handleSearch = (e) => {
     let search = e.target.value.toLowerCase();
     setFilterdData(
@@ -16,6 +17,7 @@ export function Prodacts() {
     );
   };
 
+  //function btn filter
   const handelFilter = (type) => {
     setActiveFilter(type);
     if (type === "women") {
@@ -27,23 +29,25 @@ export function Prodacts() {
     } else return setFilterdData(ProductsData);
   };
 
+  // func. jsx => display data
   const displayProduct = () => (
     <Cards>
       {filteredData.map((e) => (
-        <Link to={`ProductDetails/${e.id}`} key={e.id}>
+        <Link to={`/ProductDetails/${e.id}`} key={e.id}>
           <div>
             <img src={e.img} alt="img" />
-            <button>Quick View</button>
+            <Button customClass="Quickbutton" value="QUICK VIEW"></Button>
           </div>
-          <button>
+          <div>
             <h4>{e.name}</h4>
             <span>{e.price}</span>
-          </button>
+          </div>
         </Link>
       ))}
     </Cards>
   );
 
+  //func jsx filter
   const Filter = () => (
     <>
       <Filters>
@@ -97,17 +101,8 @@ export function Prodacts() {
   );
 
   useEffect(() => {
-    const updateData = () => {
-      const sliceData = [];
-      for (let i = 0; i < limitList; i++) {
-        sliceData.push(ProductsData[i]);
-      }
-      console.log(sliceData);
-      setFilterdData(sliceData);
-    };
-    updateData();
-  }, [limitList, ProductsData]);
-
+    setFilterdData(ProductsData);
+  }, [ProductsData]);
   return (
     <Products>
       <div className="container">

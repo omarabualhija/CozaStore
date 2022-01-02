@@ -1,27 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-import { ImgGallery, Select } from "./Styled.js";
-import { useSelector } from "react-redux";
+import { PRODUCTDETAILS, Select, Details } from "./Styled.js";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Count } from "../../Components/CountUp/Count";
+import { handelAddToCartAction } from "../../Redux/Actions/Action";
+import { Button } from "../../Components/btn/Button";
+import { SELECT } from "../../Components/MUI/SELECT";
 export function ProductDetails() {
-  const [option, setOption] = useState("");
-
+  const dispatch = useDispatch();
   const { id } = useParams();
+  const [option, setOption] = useState({
+    id: id,
+    Color: "",
+    Size: "",
+    qnt: 1,
+  });
 
   const prodectData = useSelector((state) => state.productData);
-  const [{ img }] = prodectData.filter((el) => el.id == id);
-
+  const [{ category, img, name, price, supplier }] = prodectData.filter(
+    (el) => el.id == id
+  );
+  const [error, setError] = useState(false);
   const image = [
     {
       original: img,
       thumbnail: img,
     },
   ];
+
+  const handelOption = (val, type) => {
+    setError(false);
+
+    setOption({ ...option, [type]: val });
+  };
+
+  const handelAddToCart = () => {
+    if (option.Size.length !== 0 && option.Color.length !== 0) {
+      dispatch(handelAddToCartAction(option));
+    } else setError(true);
+  };
+
   return (
     <>
       {prodectData.length !== null && (
-        <ImgGallery>
+        <PRODUCTDETAILS>
           <div className="container">
             <ImageGallery
               showFullscreenButton={false}
@@ -33,42 +57,39 @@ export function ProductDetails() {
               autoPlay={true}
               items={image}
             />
-            <div>
-              <h4>Lightweight Jacket</h4>
-              <span>500$</span>
-              <p>Nulla eget sem vitae eros .</p>
 
+            <Details>
+              <h4>{name}</h4>
+              <span>{`Price : ${price} $`}</span>
+              <p>{`Supplier : ${supplier}`}</p>
+              <div>{`Category :${category}`}</div>
               <Select>
-                <div>
-                  <label htmlFor="Size">Size</label>
-                  <select id="Size" onChange={(e) => setOption(e.target.value)}>
-                    <option value="">Choose an Option </option>
-                    <option
-                      className={option === "Size S" ? "active" : ""}
-                      value="Size S"
-                    >
-                      Size S{" "}
-                    </option>
-                    <option value="Size M">Size M</option>
-                    <option value="Size L">Size L</option>
-                    <option value="Size XL">Size XL</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="Color">Color</label>
-                  <select id="Color">
-                    <option value="">Choose an Option </option>
-                    <option value="Red">Red </option>
-                    <option value="Blue">Blue</option>
-                    <option value="White">White L</option>
-                    <option value="Grey">Grey</option>
-                  </select>
-                </div>
+                <SELECT
+                  id="Size"
+                  label={"Size"}
+                  options={["Size S", "Size M", "Size L", "Size XL"]}
+                  returnVal={(val) => handelOption(val, "Size")}
+                ></SELECT>
+                <SELECT
+                  id="Color"
+                  label={"Color"}
+                  options={["Red", "Blue", "White", "Grey"]}
+                  returnVal={(val) => handelOption(val, "Color")}
+                ></SELECT>
               </Select>
-            </div>
+              <Count
+                containerClass="containerBtn"
+                value={(val) => {
+                  setOption({ ...option, qnt: val });
+                }}
+              ></Count>
+              {error && (
+                <div style={{ color: "red" }}>Add Your Color And Size </div>
+              )}
+              <Button onClick={handelAddToCart} value="ADD TO CART" />
+            </Details>
           </div>
-        </ImgGallery>
+        </PRODUCTDETAILS>
       )}
     </>
   );

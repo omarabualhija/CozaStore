@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { backgroundColor } from "../Shared/masterStyled";
 
 export const Header = styled.header`
+  background-color: transparent;
   &.background {
     background-color: ${({ theme }) => theme.backgroundColor};
   }
@@ -55,7 +56,7 @@ export const Bar = styled.div`
     position: static;
     flex-direction: row;
     background-color: transparent !important;
-    gap: 10px;
+    gap: 40px;
   }
   & > a {
     font-weight: bold;

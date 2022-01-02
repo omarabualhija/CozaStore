@@ -16,7 +16,6 @@ export const FOOTER = styled.footer`
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      font-size: 1.2rem;
     }
   }
 `;
@@ -84,14 +83,8 @@ export const Newsletter = styled.div`
         outline: none;
       }
     }
-    & > [type="submit"] {
-      background-color: ${backgroundColor.purple};
-      width: 110px;
-      height: 45px;
-      font-size: 1rem;
-      padding: 0.5rem;
-      border-radius: 40px;
-      color: white;
+    .Submit {
+      font-size: 0.8rem;
     }
   }
   &h4 > {

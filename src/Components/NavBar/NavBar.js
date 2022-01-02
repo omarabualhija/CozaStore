@@ -9,7 +9,7 @@ export const NavBar = (props) => {
   const [CheckScroll, setCheckScroll] = useState(false);
   const themetoggle = useSelector((state) => state.theme);
   const dispatchtheme = useDispatch();
-
+  const { qnt } = useSelector((state) => state.handelAddToCartReducer);
   const changeColor = () => {
     if (window.scrollY >= 60) {
       setCheckScroll(true);
@@ -36,9 +36,6 @@ export const NavBar = (props) => {
           <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Shop">
             Shope
           </NavLink>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Features">
-            Features
-          </NavLink>
           <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/About">
             About
           </NavLink>
@@ -52,7 +49,9 @@ export const NavBar = (props) => {
             onClick={() => dispatchtheme(themeAction())}
             className={themetoggle ? `fas fa-sun` : `far fa-moon`}
           ></div>
-          <div className="fas fa-shopping-cart"></div>
+          <Link to="/CheckOut" className="fas fa-shopping-cart">
+            {qnt}
+          </Link>
           <div className="far fa-heart"></div>
           <div
             onClick={() => setToggleNav(!ToggleNav)}

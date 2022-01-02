@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "../btn/Button";
 import {
   FOOTER,
   Categories,
@@ -47,14 +48,6 @@ export const Footer = () => {
           </a>
         </Contact>
 
-        <Newsletter>
-          <h4>NEWSLETTER</h4>
-          <form>
-            <input type="email" placeholder="example@email.com" />
-            <input type="submit" value="SUBSCRIBE" />
-          </form>
-        </Newsletter>
-
         <GetIntouch>
           <h4>GET IN TOUCH</h4>
           <p>
@@ -62,7 +55,13 @@ export const Footer = () => {
             York, NY 10018
           </p>
         </GetIntouch>
-
+        <Newsletter>
+          <h4>NEWSLETTER</h4>
+          <form>
+            <input type="email" placeholder="example@email.com" />
+            <Button customClass="Submit" type="submit" value="SUBSCRIBE" />
+          </form>
+        </Newsletter>
         <Copyright>
           <div>
             <img src="/images/icons/icon-pay-01.png" alt="paypal" />
