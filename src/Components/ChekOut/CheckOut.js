@@ -9,6 +9,7 @@ export function CheckOut() {
   const CeckOutProducts = useSelector(
     (state) => state.handelAddToCartReducer.cartItems
   );
+
   const ProductsData = useSelector((state) => state.productData);
   const [CheckOut, setCheckOut] = useState([]);
 
