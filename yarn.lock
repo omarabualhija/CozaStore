@@ -5902,6 +5902,11 @@
     "fs-extra" "^8.1.0"
     "globby" "^6.1.0"
 
+"ghspa@^1.0.0":
+  "integrity" "sha1-7WYmu6z/EsXE7i8fCurO8OZuYv8="
+  "resolved" "https://registry.npmjs.org/ghspa/-/ghspa-1.0.0.tgz"
+  "version" "1.0.0"
+
 "glob-parent@^3.1.0":
   "integrity" "sha1-nmr2KZ2NO9K9QEMIMr0RPfkGxa4="
   "resolved" "https://registry.npmjs.org/glob-parent/-/glob-parent-3.1.0.tgz"

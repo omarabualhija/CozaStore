@@ -96,3 +96,4 @@ export function ProductDetails() {
     </>
   );
 }
+<script type="text/javascript" src="path-to/ghspa.js"></script>;

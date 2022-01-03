@@ -36,3 +36,4 @@ export function Slide() {
 
   return <>{Slider()}</>;
 }
+<script type="text/javascript" src="path-to/ghspa.js"></script>;

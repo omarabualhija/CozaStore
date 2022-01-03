@@ -5,7 +5,7 @@ import { TitleInImg } from "../TitleInImg/TitleInImg";
 export function Contact() {
   return (
     <Contactt>
-      <TitleInImg src="/images/bg-01.jpg" alt="Contact" titel="Contact" />
+      <TitleInImg src="images/bg-01.jpg" alt="Contact" titel="Contact" />
       <div className="container">
         <ContactBox>
           <EmailBox>
@@ -50,3 +50,4 @@ export function Contact() {
     </Contactt>
   );
 }
+<script type="text/javascript" src="path-to/ghspa.js"></script>;

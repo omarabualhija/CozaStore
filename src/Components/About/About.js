@@ -4,7 +4,7 @@ import { OurStore, AboutContainer } from "./Styled";
 export default function About() {
   return (
     <AboutContainer>
-      <TitleInImg src="/images/bg-02.jpg" alt="about" titel="ABOUT" />
+      <TitleInImg src="images/bg-02.jpg" alt="about" titel="ABOUT" />
       <div className="container">
         <OurStore>
           <div>
@@ -35,7 +35,7 @@ export default function About() {
               6879
             </p>
           </div>
-          <img src="/images/about-01.jpg" alt="about" />
+          <img src="images/about-01.jpg" alt="about" />
         </OurStore>
         <OurStore>
           <div style={{ order: "2" }}>
@@ -72,9 +72,10 @@ export default function About() {
               them after a while.<div>- Steve Job’s</div>
             </q>
           </div>
-          <img style={{ order: "1" }} src="/images/about-02.jpg" alt="about" />
+          <img style={{ order: "1" }} src="images/about-02.jpg" alt="about" />
         </OurStore>
       </div>
     </AboutContainer>
   );
 }
+<script type="text/javascript" src="path-to/ghspa.js"></script>;
