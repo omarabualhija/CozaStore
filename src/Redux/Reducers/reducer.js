@@ -39,6 +39,11 @@ export const handelAddToCartReducer = (state = { cartItems: [] }, action) => {
         return (state = { ...state, cartItems: [...state.cartItems, item] });
       }
 
+    case "DeletFromCart":
+      const itemId = action.payload;
+      const LatestItems = state.cartItems.filter((el) => el.id !== itemId);
+      return (state = { ...state, cartItems: [...LatestItems] });
+
     default:
       return state;
   }

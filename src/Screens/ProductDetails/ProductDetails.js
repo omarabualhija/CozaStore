@@ -11,6 +11,12 @@ import { SELECT } from "../../Components/MUI/SELECT";
 export function ProductDetails() {
   const dispatch = useDispatch();
   const { id } = useParams();
+
+  const prodectData = useSelector((state) => state.productData);
+  const [{ category, img, name, price, supplier }] = prodectData.filter(
+    (el) => el.id == id
+  );
+
   const [option, setOption] = useState({
     id: id,
     Color: "",
@@ -18,10 +24,6 @@ export function ProductDetails() {
     qnt: 1,
   });
 
-  const prodectData = useSelector((state) => state.productData);
-  const [{ category, img, name, price, supplier }] = prodectData.filter(
-    (el) => el.id == id
-  );
   const [error, setError] = useState(false);
   const image = [
     {

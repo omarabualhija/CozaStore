@@ -24,13 +24,13 @@ export const NavBar = (props) => {
     <Header className={CheckScroll ? "background" : ""}>
       <div className="container">
         <Logo>
-          <Link to="/">
+          <Link to="/CozaStore">
             <img src="/images/icons/logo-01.png" alt="logo" />
           </Link>
         </Logo>
 
         <Bar className={!ToggleNav ? "toggle" : ""}>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/">
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/CozaStore">
             Home
           </NavLink>
           <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Shop">

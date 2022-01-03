@@ -5,6 +5,7 @@ import { LinkBtn } from "../btn/LinkBtn";
 
 export function Slide() {
   const Sliderdata = useSelector((state) => state.sliderData);
+  console.log("ssssssssssssssssssssssssssss");
   const Slider = () => (
     <Carousel
       interval="3000"

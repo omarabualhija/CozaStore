@@ -24,3 +24,10 @@ export const handelAddToCartAction = (data) => {
     payload: data,
   };
 };
+
+export const handelremoveFromCartAction = (data) => {
+  return {
+    type: "DeletFromCart",
+    payload: data,
+  };
+};

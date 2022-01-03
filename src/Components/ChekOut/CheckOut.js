@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { EmptyMsg } from "../EmptyMsg/EmptyMsg";
 import { CheckOutStyle, CartTotals, TotalProducts, Total } from "./Styled";
 import { SELECT } from "../MUI/SELECT";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { handelremoveFromCartAction } from "../../Redux/Actions/Action";
 export function CheckOut() {
+  const dispatch = useDispatch();
   const CeckOutProducts = useSelector(
     (state) => state.handelAddToCartReducer.cartItems
   );
-
+  console.log(CeckOutProducts);
   const ProductsData = useSelector((state) => state.productData);
   const [CheckOut, setCheckOut] = useState([]);
 
@@ -16,19 +18,21 @@ export function CheckOut() {
   }, [CeckOutProducts]);
 
   const DeletItem = (id) => {
-    setCheckOut(CeckOutProducts.filter((e) => e.id !== id));
+    dispatch(handelremoveFromCartAction(id));
   };
 
-  const TotalPrice = (e) => {
-    const price = CeckOutProducts.map((el) => {
-      const { price } = ProductsData.find((e) => el.id == e.id);
-      const total = CheckOut.reduce(
-        (prev, curr) => prev.qnt * price + curr.qnt * price
-      );
-      console.log(total);
+  const Total = () => {
+    let init = 0;
+    const total = CeckOutProducts.map((el) => {
+      const [{ price }] = ProductsData.filter((e) => e.id == el.id);
+
+      init = init + parseFloat(price) * el.qnt;
+      console.log(init);
     });
+
+    return init;
   };
-  TotalPrice();
+
   return (
     <>
       {CheckOut.length !== 0 ? (
@@ -41,6 +45,7 @@ export function CheckOut() {
                   <td> </td>
                   <td>Color</td>
                   <td>Size</td>
+                  <td>Quantity</td>
                   <td>Price</td>
                   <td>Total</td>
                 </tr>
@@ -50,13 +55,14 @@ export function CheckOut() {
                   );
 
                   return (
-                    <tr>
+                    <tr key={e.id}>
                       <td>
                         <img src={item.img} alt="Product img"></img>
                       </td>
                       <td>{item.name}</td>
                       <td>{e.Color}</td>
                       <td>{e.Size}</td>
+                      <td>{e.qnt}</td>
                       <td>{item.price}</td>
                       <td>{parseFloat(item.price) * parseFloat(e.qnt)}</td>
                       <td>
@@ -75,7 +81,7 @@ export function CheckOut() {
             <h4>CART TOTAL</h4>
             <div>
               <div>SubTotal</div>
-              <div>999$</div>
+              <div>{Total()}</div>
             </div>
             <div>
               <div>Shipping</div>
@@ -94,7 +100,7 @@ export function CheckOut() {
             </div>
             <Total>
               <div>TOTAL </div>
-              <div>500$</div>
+              <div>{Total()}</div>
             </Total>
           </CartTotals>
         </CheckOutStyle>
