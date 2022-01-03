@@ -25,7 +25,14 @@ export const NavBar = (props) => {
       <div className="container">
         <Logo>
           <Link to="/CozaStore">
-            <img src="/images/icons/logo-01.png" alt="logo" />
+            <img
+              src={`${
+                themetoggle
+                  ? "images/icons/logo-01.png"
+                  : "images/icons/logo-02.png"
+              }`}
+              alt="logo"
+            />
           </Link>
         </Logo>
 
@@ -33,13 +40,19 @@ export const NavBar = (props) => {
           <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/CozaStore">
             Home
           </NavLink>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Shop">
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="CozaStore/Shop">
             Shope
           </NavLink>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/About">
+          <NavLink
+            onClick={() => setToggleNav(!ToggleNav)}
+            to="CozaStore/About"
+          >
             About
           </NavLink>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Contact">
+          <NavLink
+            onClick={() => setToggleNav(!ToggleNav)}
+            to="CozaStore/Contact"
+          >
             Contact
           </NavLink>
         </Bar>
@@ -49,7 +62,7 @@ export const NavBar = (props) => {
             onClick={() => dispatchtheme(themeAction())}
             className={themetoggle ? `fas fa-sun` : `far fa-moon`}
           ></div>
-          <Link to="/CheckOut" className="fas fa-shopping-cart">
+          <Link to="CozaStore/CheckOut" className="fas fa-shopping-cart">
             {qnt}
           </Link>
           <div className="far fa-heart"></div>
