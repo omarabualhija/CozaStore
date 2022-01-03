@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "@iconify/react": "^3.1.0"
+    "@iconify/react": "^3.1.0",
+    "shx": "^0.3.3"
   }
 }
