@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/CozaStore/static/css/main.56ede650.chunk.css",
-    "main.js": "/CozaStore/static/js/main.88d308f1.chunk.js",
-    "main.js.map": "/CozaStore/static/js/main.88d308f1.chunk.js.map",
+    "main.js": "/CozaStore/static/js/main.4c6f65f7.chunk.js",
+    "main.js.map": "/CozaStore/static/js/main.4c6f65f7.chunk.js.map",
     "runtime-main.js": "/CozaStore/static/js/runtime-main.2de6149b.js",
     "runtime-main.js.map": "/CozaStore/static/js/runtime-main.2de6149b.js.map",
     "static/css/2.a4070788.chunk.css": "/CozaStore/static/css/2.a4070788.chunk.css",
-    "static/js/2.089150a2.chunk.js": "/CozaStore/static/js/2.089150a2.chunk.js",
-    "static/js/2.089150a2.chunk.js.map": "/CozaStore/static/js/2.089150a2.chunk.js.map",
+    "static/js/2.8d32e2ee.chunk.js": "/CozaStore/static/js/2.8d32e2ee.chunk.js",
+    "static/js/2.8d32e2ee.chunk.js.map": "/CozaStore/static/js/2.8d32e2ee.chunk.js.map",
     "index.html": "/CozaStore/index.html",
     "static/css/2.a4070788.chunk.css.map": "/CozaStore/static/css/2.a4070788.chunk.css.map",
     "static/css/main.56ede650.chunk.css.map": "/CozaStore/static/css/main.56ede650.chunk.css.map",
-    "static/js/2.089150a2.chunk.js.LICENSE.txt": "/CozaStore/static/js/2.089150a2.chunk.js.LICENSE.txt"
+    "static/js/2.8d32e2ee.chunk.js.LICENSE.txt": "/CozaStore/static/js/2.8d32e2ee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2de6149b.js",
     "static/css/2.a4070788.chunk.css",
-    "static/js/2.089150a2.chunk.js",
+    "static/js/2.8d32e2ee.chunk.js",
     "static/css/main.56ede650.chunk.css",
-    "static/js/main.88d308f1.chunk.js"
+    "static/js/main.4c6f65f7.chunk.js"
   ]
 }
