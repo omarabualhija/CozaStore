@@ -5,7 +5,7 @@ export function CategoryCard() {
   return (
     <Card>
       <div className="container">
-        <Link to="/CozaStore/Shope">
+        <Link to="/CozaStore/Shop">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-01.jpg"
             alt="banner-01"
@@ -23,7 +23,6 @@ export function CategoryCard() {
             alt="banner-02"
           ></img>
           <div>
-            {" "}
             {/*title*/}
             <h4>Men</h4>
             <h5>Spring 2021</h5>
