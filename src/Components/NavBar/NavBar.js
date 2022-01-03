@@ -44,7 +44,7 @@ export const NavBar = (props) => {
             onClick={() => setToggleNav(!ToggleNav)}
             to="/CozaStore/Shop"
           >
-            Shope
+            Shop
           </NavLink>
           <NavLink
             onClick={() => setToggleNav(!ToggleNav)}
