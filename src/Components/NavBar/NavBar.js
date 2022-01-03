@@ -28,8 +28,8 @@ export const NavBar = (props) => {
             <img
               src={`${
                 themetoggle
-                  ? "images/icons/logo-02.png"
-                  : "images/icons/logo-01.png"
+                  ? "https://omarabualhija.github.io/CozaStore/images/icons/logo-02.png"
+                  : "https://omarabualhija.github.io/CozaStore/images/icons/logo-01.png"
               }`}
               alt="logo"
             />

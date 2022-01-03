@@ -9,7 +9,6 @@ export function CheckOut() {
   const CeckOutProducts = useSelector(
     (state) => state.handelAddToCartReducer.cartItems
   );
-  console.log(CeckOutProducts);
   const ProductsData = useSelector((state) => state.productData);
   const [CheckOut, setCheckOut] = useState([]);
 
@@ -20,14 +19,11 @@ export function CheckOut() {
   const DeletItem = (id) => {
     dispatch(handelremoveFromCartAction(id));
   };
-
   const Total = () => {
     let init = 0;
     const total = CeckOutProducts.map((el) => {
       const [{ price }] = ProductsData.filter((e) => e.id == el.id);
-
       init = init + parseFloat(price) * el.qnt;
-      console.log(init);
     });
 
     return init;
@@ -94,7 +90,7 @@ export function CheckOut() {
                 <SELECT
                   label={"country"}
                   options={["USA", "Jordan", "KSA"]}
-                  returnVal={(val) => console.log(val)}
+                  returnVal={(val) => val}
                 ></SELECT>
               </div>
             </div>

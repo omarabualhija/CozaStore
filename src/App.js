@@ -21,7 +21,7 @@ function App() {
         const data = await axios.get(
           "https://my-json-server.typicode.com/omarabualhija/CozaStoreAPI/Slider"
         );
-        console.log(data.data);
+
         dispatch(sliderAction(data.data));
       } catch (e) {
         console.log("sliderData API on APP JS", e);
@@ -33,7 +33,7 @@ function App() {
         const data = await axios.get(
           "https://my-json-server.typicode.com/omarabualhija/CozaStoreAPI/product"
         );
-        console.log(data.data);
+
         dispatch(productAction(data.data));
       } catch (e) {
         console.log("productData API on APP JS", e);

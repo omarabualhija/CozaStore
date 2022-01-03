@@ -64,11 +64,26 @@ export const Footer = () => {
         </Newsletter>
         <Copyright>
           <div>
-            <img src="images/icons/icon-pay-01.png" alt="paypal" />
-            <img src="images/icons/icon-pay-02.png" alt="Visa" />
-            <img src="images/icons/icon-pay-03.png" alt="masterCard" />
-            <img src="images/icons/icon-pay-04.png" alt="cashmone" />
-            <img src="images/icons/icon-pay-05.png" alt="zaincash" />
+            <img
+              src="https://omarabualhija.github.io/CozaStore/images/icons/icon-pay-01.png"
+              alt="paypal"
+            />
+            <img
+              src="https://omarabualhija.github.io/CozaStore/images/icons/icon-pay-02.png"
+              alt="Visa"
+            />
+            <img
+              src="https://omarabualhija.github.io/CozaStore/images/icons/icon-pay-03.png"
+              alt="masterCard"
+            />
+            <img
+              src="https://omarabualhija.github.io/CozaStore/images/icons/icon-pay-04.png"
+              alt="cashmone"
+            />
+            <img
+              src="https://omarabualhija.github.io/CozaStore/images/icons/icon-pay-05.png"
+              alt="zaincash"
+            />
           </div>
 
           <p>
