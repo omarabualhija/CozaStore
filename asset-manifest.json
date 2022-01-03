@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CozaStore/static/css/main.56ede650.chunk.css",
-    "main.js": "/CozaStore/static/js/main.ccc1749c.chunk.js",
-    "main.js.map": "/CozaStore/static/js/main.ccc1749c.chunk.js.map",
+    "main.js": "/CozaStore/static/js/main.e1c0013e.chunk.js",
+    "main.js.map": "/CozaStore/static/js/main.e1c0013e.chunk.js.map",
     "runtime-main.js": "/CozaStore/static/js/runtime-main.2de6149b.js",
     "runtime-main.js.map": "/CozaStore/static/js/runtime-main.2de6149b.js.map",
     "static/css/2.a4070788.chunk.css": "/CozaStore/static/css/2.a4070788.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.a4070788.chunk.css",
     "static/js/2.8d32e2ee.chunk.js",
     "static/css/main.56ede650.chunk.css",
-    "static/js/main.ccc1749c.chunk.js"
+    "static/js/main.e1c0013e.chunk.js"
   ]
 }
