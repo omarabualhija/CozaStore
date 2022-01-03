@@ -33,7 +33,7 @@ export function Prodacts(props) {
   const displayProduct = () => (
     <Cards>
       {filteredData.map((e) => (
-        <Link to={`CozaStore/ProductDetails/${e.id}`} key={e.id}>
+        <Link to={`ProductDetails/${e.id}`} key={e.id}>
           <div>
             <img src={e.img} alt="img" />
             <Button customClass="Quickbutton" value="QUICK VIEW"></Button>
