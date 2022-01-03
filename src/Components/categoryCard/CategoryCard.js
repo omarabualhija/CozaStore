@@ -5,7 +5,7 @@ export function CategoryCard() {
   return (
     <Card>
       <div className="container">
-        <Link to="/Shope">
+        <Link to="/CozaStore/Shope">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-01.jpg"
             alt="banner-01"
@@ -17,7 +17,7 @@ export function CategoryCard() {
           <div>Shope Now</div>
         </Link>
 
-        <Link to="/Shope">
+        <Link to="/CozaStore/Shope">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-02.jpg"
             alt="banner-02"
@@ -30,7 +30,7 @@ export function CategoryCard() {
           </div>
           <div>Shope Now</div>
         </Link>
-        <Link to="/Shope">
+        <Link to="/CozaStore/Shope">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-03.jpg"
             alt="banner-03"
