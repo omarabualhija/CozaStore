@@ -1,12 +1,10 @@
 import Carousel from "react-material-ui-carousel";
 import { useSelector } from "react-redux";
 import "./style.css";
-
 import { LinkBtn } from "../btn/LinkBtn";
 
 export function Slide() {
   const Sliderdata = useSelector((state) => state.sliderData);
-  console.log(Sliderdata);
   const Slider = () => (
     <Carousel
       interval="3000"

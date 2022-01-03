@@ -8,7 +8,7 @@ import { CheckOut } from "../ChekOut/CheckOut";
 export const AllRouters = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />}></Route>
+      <Route exact path="/CozaStore" element={<Home />}></Route>
       <Route exact path="/About" element={<About />}></Route>
       <Route path="/Shop" element={<ProductScreen></ProductScreen>}></Route>
       <Route path="/ProductDetails/:id" element={<ProductDetails />}></Route>
