@@ -18,7 +18,9 @@ function App() {
   useEffect(() => {
     const sliderData = async () => {
       try {
-        const data = await axios.get("http://localhost:3000/Slider");
+        const data = await axios.get(
+          "https://my-json-server.typicode.com/omarabualhija/CozaStoreAPI/Slider"
+        );
         console.log(data.data);
         dispatch(sliderAction(data.data));
       } catch (e) {
@@ -28,7 +30,9 @@ function App() {
 
     const productData = async () => {
       try {
-        const data = await axios.get("http://localhost:3000/product");
+        const data = await axios.get(
+          "https://my-json-server.typicode.com/omarabualhija/CozaStoreAPI/product"
+        );
         console.log(data.data);
         dispatch(productAction(data.data));
       } catch (e) {
