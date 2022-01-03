@@ -9,7 +9,7 @@ export function CheckOut() {
   const CeckOutProducts = useSelector(
     (state) => state.handelAddToCartReducer.cartItems
   );
-  console.log(CeckOutProducts);
+
   const ProductsData = useSelector((state) => state.productData);
   const [CheckOut, setCheckOut] = useState([]);
 
@@ -27,7 +27,7 @@ export function CheckOut() {
       const [{ price }] = ProductsData.filter((e) => e.id == el.id);
 
       init = init + parseFloat(price) * el.qnt;
-      console.log(init);
+
     });
 
     return init;
