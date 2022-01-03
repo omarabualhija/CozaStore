@@ -9,11 +9,17 @@ export const AllRouters = () => {
   return (
     <Routes>
       <Route exact path="/CozaStore" element={<Home />}></Route>
-      <Route exact path="/About" element={<About />}></Route>
-      <Route path="/Shop" element={<ProductScreen></ProductScreen>}></Route>
-      <Route path="/ProductDetails/:id" element={<ProductDetails />}></Route>
-      <Route path="/Contact" element={<Contact />}></Route>
-      <Route path="/CheckOut" element={<CheckOut />}></Route>
+      <Route exact path="CozaStore/About" element={<About />}></Route>
+      <Route
+        path="CozaStore/Shop"
+        element={<ProductScreen></ProductScreen>}
+      ></Route>
+      <Route
+        path="CozaStore/ProductDetails/:id"
+        element={<ProductDetails />}
+      ></Route>
+      <Route path="CozaStore/Contact" element={<Contact />}></Route>
+      <Route path="CozaStore/CheckOut" element={<CheckOut />}></Route>
     </Routes>
   );
 };
