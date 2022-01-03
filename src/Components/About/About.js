@@ -78,4 +78,3 @@ export default function About() {
     </AboutContainer>
   );
 }
-<script type="text/javascript" src="path-to/ghspa.js"></script>;

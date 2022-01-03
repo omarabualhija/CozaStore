@@ -50,4 +50,3 @@ export function Contact() {
     </Contactt>
   );
 }
-<script type="text/javascript" src="path-to/ghspa.js"></script>;
