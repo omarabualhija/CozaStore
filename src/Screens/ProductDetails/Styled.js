@@ -30,7 +30,6 @@ export const Select = styled.div`
 
 export const Details = styled.div`
   margin-top: 15px;
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -56,7 +55,6 @@ export const Details = styled.div`
 `;
 
 export const Description = styled.div`
-  grid-column: 1/3;
   display: flex;
   flex-direction: column;
   gap: 10px;
