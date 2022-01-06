@@ -8,12 +8,18 @@ import { CheckOut } from "../Screens/ChekOut/CheckOut";
 export const AllRouters = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/Contact" element={<Contact />}></Route>
-      <Route path="/About" element={<About />}></Route>
-      <Route path="/Shop" element={<ProductScreen></ProductScreen>}></Route>
-      <Route path="/ProductDetails/:id" element={<ProductDetails />}></Route>
-      <Route path="/CheckOut" element={<CheckOut />}></Route>
+      <Route path="CozaStore" element={<Home />}></Route>
+      <Route path="CozaStore/Contact" element={<Contact />}></Route>
+      <Route path="CozaStore/About" element={<About />}></Route>
+      <Route
+        path="CozaStore/Shop"
+        element={<ProductScreen></ProductScreen>}
+      ></Route>
+      <Route
+        path="CozaStore/ProductDetails/:id"
+        element={<ProductDetails />}
+      ></Route>
+      <Route path="CozaStore/CheckOut" element={<CheckOut />}></Route>
     </Routes>
   );
 };

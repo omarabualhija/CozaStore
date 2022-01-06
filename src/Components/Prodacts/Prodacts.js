@@ -41,7 +41,7 @@ export function Prodacts(props) {
         {(loading ? Array.from(new Array(12)) : data).map((e, i) => (
           <>
             {e ? (
-              <Link to={`/ProductDetails/${e.id}`} key={e.id}>
+              <Link to={`CozaStore/ProductDetails/${e.id}`} key={e.id}>
                 <div>
                   <img src={e.image} alt="img" />
                   <Button customClass="Quickbutton" value="QUICK VIEW"></Button>

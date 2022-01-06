@@ -49,7 +49,7 @@ export function Slide() {
             <div>{e.mainTitle}</div>
             <div>{e.subTitle}</div>
 
-            <LinkBtn to="/CozaStore/Shop"> Shope Now</LinkBtn>
+            <LinkBtn to="CozaStore/Shop"> Shope Now</LinkBtn>
           </div>
         </div>
       ))}
