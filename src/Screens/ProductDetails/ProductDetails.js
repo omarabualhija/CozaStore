@@ -108,8 +108,9 @@ export function ProductDetails() {
               </Details>
               <Description>
                 <h3>DESCRIPTION</h3>
-                <div>{product.description}</div>
+               
               </Description>
+               <div className="container">{product.description}</div>
             </div>
           </PRODUCTDETAILS>
         </>
