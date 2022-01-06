@@ -5,7 +5,11 @@ import { TitleInImg } from "../../Components/TitleInImg/TitleInImg";
 export function Contact() {
   return (
     <Contactt>
-      <TitleInImg src="images/bg-01.jpg" alt="Contact" titel="Contact" />
+      <TitleInImg
+        src="https://omarabualhija.github.io/CozaStore/images/bg-01.jpg"
+        alt="Contact"
+        titel="Contact"
+      />
       <div className="container">
         <ContactBox>
           <EmailBox>
