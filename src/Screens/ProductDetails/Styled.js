@@ -55,6 +55,7 @@ export const Details = styled.div`
 `;
 
 export const Description = styled.div`
+margin-top:30px;
   display: flex;
   flex-direction: column;
   gap: 10px;
