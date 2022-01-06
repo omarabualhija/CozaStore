@@ -4,10 +4,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useSelector } from "react-redux";
-import { darck, light } from "../Shared/Theme";
-import { backgroundColor } from "../Shared/masterStyled";
+import { darck, light } from "../../Shared/Theme";
+import { mainColor } from "../../Shared/Theme";
 export function SELECT({ returnVal, label, options }) {
   const themeToggel = useSelector((state) => state.theme);
 
@@ -16,8 +16,8 @@ export function SELECT({ returnVal, label, options }) {
       ? darck.backgroundColor
       : light.backgroundColor,
     color: themeToggel ? darck.color : light.color,
-    border: `1px solid  ${backgroundColor.purple}`,
-    outlineColor: `${backgroundColor.purple}`,
+    border: `1px solid  ${mainColor.purple}`,
+    outlineColor: `${mainColor.purple}`,
     palette: {
       mode: themeToggel ? "dark" : "light",
     },

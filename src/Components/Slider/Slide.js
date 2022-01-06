@@ -1,12 +1,31 @@
 import Carousel from "react-material-ui-carousel";
-import { useSelector } from "react-redux";
 import "./style.css";
 import { LinkBtn } from "../btn/LinkBtn";
 
 export function Slide() {
-  const Sliderdata = useSelector((state) => state.sliderData);
+  let data = [
+    {
+      id: 1,
+      mainTitle: "Women Collection 2021",
+      subTitle: "NEW SEASON",
+      img: "/images/slide-01.jpg",
+    },
+    {
+      id: 2,
+      mainTitle: "Men Collection 2021",
+      subTitle: "JACKETS & COATS",
+      img: "/images/slide-02.jpg",
+    },
+    {
+      id: 3,
+      mainTitle: "Men Collection 2021",
+      subTitle: "NEW ARRIVALS",
+      img: "/images/slide-03.jpg",
+    },
+  ];
   const Slider = () => (
     <Carousel
+      className="postion"
       interval="3000"
       navButtonsProps={{
         style: {
@@ -19,9 +38,13 @@ export function Slide() {
         },
       }}
     >
-      {Sliderdata.map((e) => (
+      {data.map((e) => (
         <div key={e.id}>
-          <img className=" vh100" src={e.img} alt="First slide" />
+          <img
+            className=" vh100"
+            src="/images/slide-01.jpg"
+            alt="First slide"
+          />
           <div className="title">
             <div>{e.mainTitle}</div>
             <div>{e.subTitle}</div>

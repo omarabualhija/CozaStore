@@ -1,5 +1,4 @@
 {
-  "homepage": "https://omarabualhija.github.io/CozaStore",
   "name": "cozastore",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +17,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
-    "bootstrap": "^5.1.3",
     "gh-pages": "^3.2.3",
     "ghspa": "^1.0.0",
     "react": "^17.0.2",

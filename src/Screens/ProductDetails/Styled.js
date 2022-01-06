@@ -1,19 +1,24 @@
 import styled from "styled-components";
-import { backgroundColor } from "../../Components/Shared/masterStyled";
-
+import { mainColor } from "../../Shared/Theme";
 export const PRODUCTDETAILS = styled.div`
-  @media (min-width: 676px) {
-    margin-top: 55px;
-  }
   & > :first-child {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-
     .slider-MW {
       max-width: 550px;
       padding: 20px;
     }
+
+    @media (min-width: 992px) {
+      padding: 0 150px;
+    }
+    @media (min-width: 1200px) {
+      padding: 0 200px;
+    }
+  }
+  @media (min-width: 570px) {
+    margin-top: 55px;
   }
 `;
 
@@ -28,8 +33,8 @@ export const Details = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  border: 1px solid;
+  gap: 10px;
+  border: 1px solid ${mainColor.purple};
   padding: 35px;
   font-size: 1rem;
   @media (min-width: 997px) {
@@ -48,4 +53,13 @@ export const Details = styled.div`
   > :nth-child(8) {
     margin: auto;
   }
+`;
+
+export const Description = styled.div`
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid ${mainColor.purple};
+  padding: 10px;
 `;

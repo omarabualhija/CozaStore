@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
+import { mainColor } from "../../Shared/Theme";
 
 export const Card = styled.div`
   //Start Component Style
@@ -49,10 +49,13 @@ export const Card = styled.div`
         transition: all 0.2s;
         transition-timing-function: linear;
 
-        & > h5,
+        & > h5 {
+          font-size: 0.9rem;
+          margin: 0.8rem 0;
+        }
+
         h4 {
-          font-size: 1rem;
-          margin-top: 0.8rem;
+          font-size: 1.25rem;
         }
       }
       //end Title
@@ -101,7 +104,7 @@ export const Card = styled.div`
         //change block color to parpel
         opacity: 0.9;
         transition: all 1s;
-        background-color: ${backgroundColor.purple};
+        background-color: ${mainColor.purple};
       }
     }
   }

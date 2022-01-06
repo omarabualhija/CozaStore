@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../btn/Button";
+import { Button } from "../../Components/btn/Button";
 import { Contactt, ContactBox, EmailBox, AdressBox } from "./Styled.js";
-import { TitleInImg } from "../TitleInImg/TitleInImg";
+import { TitleInImg } from "../../Components/TitleInImg/TitleInImg";
 export function Contact() {
   return (
     <Contactt>

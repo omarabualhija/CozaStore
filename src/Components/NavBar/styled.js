@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
-
+import { mainColor } from "../../Shared/Theme";
+//header style
 export const Header = styled.header`
   background-color: transparent;
   &.background {
@@ -40,7 +40,7 @@ export const Bar = styled.div`
   position: absolute;
   z-index: 999;
   width: 100%;
-  background-color: ${backgroundColor.purple};
+  background-color: ${mainColor.purple};
   left: 0;
   top: 55px;
   display: flex;
@@ -71,7 +71,7 @@ export const Bar = styled.div`
   .active {
     color: ${({ theme }) => theme.color};
     @media (min-width: 575px) {
-      color: ${backgroundColor.purple};
+      color: ${mainColor.purple};
     }
   }
 `;

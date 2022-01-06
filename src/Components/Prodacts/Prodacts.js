@@ -1,50 +1,79 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Products, Filters, Cards, Search } from "./Styled";
+import { Products, Filters, Cards, Search, btnLoadMore } from "./Styled";
 import { Link } from "react-router-dom";
 import { Button } from "../btn/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { listProductAction } from "../../Redux/Actions/Action";
+import Skeleton from "@mui/material/Skeleton";
+import { Rating } from "../Rating/Rating";
 
 export function Prodacts(props) {
+  const dispatch = useDispatch();
   const [toggleFilter, setToggleFilter] = useState(false); //to Show serch box
-  const ProductsData = useSelector((state) => state.productData); //get card product data
-  const [filteredData, setFilterdData] = useState([]); // State to display the data after filtering
+  const { loading, data } = useSelector((state) => state.productData); //get card product data
   const [activeFilter, setActiveFilter] = useState("All Products"); //btn filter
+  const [limit, setLimit] = useState(4);
+  const [type, setType] = useState("");
   //func search box
-  const handleSearch = (e) => {
-    let search = e.target.value.toLowerCase();
-    setFilterdData(
-      ProductsData.filter((e) => e.name.toLowerCase().includes(search))
-    );
-  };
+
+  useEffect(() => {
+    dispatch(listProductAction());
+  }, [dispatch]);
 
   //function btn filter
-  const handelFilter = (type) => {
-    setActiveFilter(type);
-    if (type === "women") {
-      return setFilterdData(ProductsData.filter((e) => e.category === type));
-    } else if (type === "men") {
-      return setFilterdData(ProductsData.filter((e) => e.category === type));
-    } else if (type === "accessories") {
-      return setFilterdData(ProductsData.filter((e) => e.category === type));
-    } else return setFilterdData(ProductsData);
+  const handelFilter = (e) => {
+    const category = e.target.dataset.category;
+    setType(category);
+    setActiveFilter(category);
+    dispatch(listProductAction(category, limit));
+  };
+
+  const handleLimitation = () => {
+    const add = limit + 4;
+    setLimit(add);
+    dispatch(listProductAction(type, add));
   };
 
   // func. jsx => display data
   const displayProduct = () => (
-    <Cards>
-      {filteredData.map((e) => (
-        <Link to={`/CozaStore/ProductDetails/${e.id}`} key={e.id}>
-          <div>
-            <img src={e.img} alt="img" />
-            <Button customClass="Quickbutton" value="QUICK VIEW"></Button>
-          </div>
-          <div>
-            <h4>{e.name}</h4>
-            <span>{e.price}</span>
-          </div>
-        </Link>
-      ))}
-    </Cards>
+    <>
+      <Cards>
+        {(loading ? Array.from(new Array(12)) : data).map((e, i) => (
+          <>
+            {e ? (
+              <Link to={`/ProductDetails/${e.id}`} key={e.id}>
+                <div>
+                  <img src={e.image} alt="img" />
+                  <Button customClass="Quickbutton" value="QUICK VIEW"></Button>
+                </div>
+                <div>
+                  <h4>{e.category}</h4>
+                  <span>{e.price}</span>
+                  <Rating rating={e.rating} />
+                </div>
+              </Link>
+            ) : (
+              <Cards key={i}>
+                <Skeleton
+                  variant="rectangular"
+                  sx={{ width: 1 }}
+                  height={118}
+                />
+                <Skeleton />
+                <Skeleton />
+              </Cards>
+            )}
+          </>
+        ))}
+      </Cards>
+      <div style={{ width: "0", margin: "20px auto" }}>
+        <Button
+          customClass="m-y"
+          value="Show More"
+          onClick={handleLimitation}
+        ></Button>
+      </div>
+    </>
   );
 
   //func jsx filter
@@ -52,31 +81,41 @@ export function Prodacts(props) {
     <>
       <Filters>
         <div>
-          {" "}
           {/*//Filter Type} */}
           <span
+            data-category=""
             className={activeFilter === "All Products" ? "active" : ""}
-            onClick={() => handelFilter("All Products")}
+            onClick={handelFilter}
           >
             All Products
           </span>
           <span
-            className={activeFilter === "women" ? "active" : ""}
-            onClick={() => handelFilter("women")}
+            data-category="women's clothing"
+            className={activeFilter === "women's clothing" ? "active" : ""}
+            onClick={handelFilter}
           >
             women
           </span>
           <span
-            className={activeFilter === "men" ? "active" : ""}
-            onClick={() => handelFilter("men")}
+            data-category="men's clothing"
+            className={activeFilter === "men's clothing" ? "active" : ""}
+            onClick={handelFilter}
           >
             Men
           </span>
           <span
-            className={activeFilter === "accessories" ? "active" : ""}
-            onClick={() => handelFilter("accessories")}
+            data-category="jewelery"
+            className={activeFilter === "jewelery" ? "active" : ""}
+            onClick={handelFilter}
           >
             Accessories
+          </span>
+          <span
+            data-category="electronics"
+            className={activeFilter === "electronics" ? "active" : ""}
+            onClick={handelFilter}
+          >
+            Electronics
           </span>
         </div>
         <div>
@@ -91,25 +130,20 @@ export function Prodacts(props) {
 
       <Search className={toggleFilter ? "show" : ""}>
         <i className="fas fa-search"></i>
-        <input
-          onChange={handleSearch}
-          type="search"
-          placeholder="Search here !"
-        ></input>
+        <input type="search" placeholder="Search here !"></input>
       </Search>
     </>
   );
 
-  useEffect(() => {
-    setFilterdData(ProductsData);
-  }, [ProductsData]);
   return (
-    <Products>
-      <div className="container">
-        <h2>PRODUCT OVERVIEW</h2>
-        {Filter()}
-        {displayProduct()}
-      </div>
-    </Products>
+    <>
+      <Products>
+        <div className="container">
+          <h2>PRODUCT OVERVIEW</h2>
+          {Filter()}
+          {displayProduct()}
+        </div>
+      </Products>
+    </>
   );
 }

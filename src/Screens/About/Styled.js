@@ -1,16 +1,14 @@
 import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
+import { mainColor } from "../../Shared/Theme";
 
 export const OurStore = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
   margin: 65px 0;
-
   @media (min-width: 676px) {
     flex-direction: row;
   }
-
   & > :first-child {
     // text box
     & > :first-child {
@@ -19,17 +17,14 @@ export const OurStore = styled.div`
       font-size: 1.8rem;
       margin-bottom: 25px;
     }
-
     & > :nth-child(2) {
       //paragraph
       font-size: 1.05rem;
       line-height: 1.8rem;
     }
   }
-
   & > :nth-child(2) {
     //img
-
     position: relative;
     width: 70%;
     height: 400px;
@@ -39,21 +34,19 @@ export const OurStore = styled.div`
       height: 375px;
     }
   }
-
   .q {
     position: relative;
     margin-top: 66px;
     display: block;
     margin-left: 40px;
     line-height: 2.2rem;
-
     &:before {
       content: "";
       position: absolute;
       left: -20px;
       width: 2px;
       height: 100%;
-      background-color: ${backgroundColor.purple};
+      background-color: ${mainColor.purple};
     }
   }
 `;

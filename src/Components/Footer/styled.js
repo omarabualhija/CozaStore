@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
+import { mainColor } from "../../Shared/Theme";
 export const FOOTER = styled.footer`
   background-color: #222;
   margin-top: 40px;
@@ -26,7 +26,7 @@ export const Categories = styled.div`
 
   & > a {
     :hover {
-      color: ${backgroundColor.purple};
+      color: ${mainColor.purple};
     }
   }
 `;
@@ -57,7 +57,7 @@ export const Contact = styled.div`
     margin-right: 20px;
 
     :hover {
-      color: ${backgroundColor.purple};
+      color: ${mainColor.purple};
     }
   }
 `;
@@ -75,10 +75,10 @@ export const Newsletter = styled.div`
       height: 28px;
       padding: 0 6px;
       font-size: 1.2rem;
-      color: ${backgroundColor.purple};
+      color: ${mainColor.purple};
       background: none;
       border: none;
-      border-bottom: 1px solid ${backgroundColor.purple};
+      border-bottom: 1px solid ${mainColor.purple};
       :focus {
         outline: none;
       }
@@ -106,7 +106,7 @@ export const Copyright = styled.div`
     padding: 20px 0;
     text-align: center;
     .color {
-      color: ${backgroundColor.purple};
+      color: ${mainColor.purple};
     }
   }
 

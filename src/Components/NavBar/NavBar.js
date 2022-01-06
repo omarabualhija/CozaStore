@@ -9,7 +9,6 @@ export const NavBar = (props) => {
   const [CheckScroll, setCheckScroll] = useState(false);
   const themetoggle = useSelector((state) => state.theme);
   const dispatchtheme = useDispatch();
-  const { qnt } = useSelector((state) => state.handelAddToCartReducer);
   const changeColor = () => {
     if (window.scrollY >= 60) {
       setCheckScroll(true);
@@ -17,14 +16,13 @@ export const NavBar = (props) => {
       setCheckScroll(false);
     }
   };
-
   window.addEventListener("scroll", changeColor);
 
   return (
     <Header className={CheckScroll ? "background" : ""}>
       <div className="container">
         <Logo>
-          <Link to="/CozaStore">
+          <Link to="/">
             <img
               src={`${
                 themetoggle
@@ -37,25 +35,16 @@ export const NavBar = (props) => {
         </Logo>
 
         <Bar className={!ToggleNav ? "toggle" : ""}>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/CozaStore">
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/">
             Home
           </NavLink>
-          <NavLink
-            onClick={() => setToggleNav(!ToggleNav)}
-            to="/CozaStore/Shop"
-          >
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Shop">
             Shop
           </NavLink>
-          <NavLink
-            onClick={() => setToggleNav(!ToggleNav)}
-            to="/CozaStore/About"
-          >
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/About">
             About
           </NavLink>
-          <NavLink
-            onClick={() => setToggleNav(!ToggleNav)}
-            to="/CozaStore/Contact"
-          >
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Contact">
             Contact
           </NavLink>
         </Bar>
@@ -65,9 +54,7 @@ export const NavBar = (props) => {
             onClick={() => dispatchtheme(themeAction())}
             className={themetoggle ? `fas fa-sun` : `far fa-moon`}
           ></div>
-          <Link to="/CozaStore/CheckOut" className="fas fa-shopping-cart">
-            {qnt}
-          </Link>
+          <Link to="/CheckOut" className="fas fa-shopping-cart"></Link>
           <div className="far fa-heart"></div>
           <div
             onClick={() => setToggleNav(!ToggleNav)}

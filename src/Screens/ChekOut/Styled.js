@@ -47,6 +47,7 @@ export const TotalProducts = styled.div`
       width: 100%;
     }
     & > tbody tr {
+      text-align: center;
       border-bottom: 1px solid;
       & > td {
         padding: 15px;

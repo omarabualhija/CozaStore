@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
+import styled, { css } from "styled-components";
+import { mainColor } from "../../Shared/Theme";
 
 export const Products = styled.div`
   //Start Component
@@ -22,13 +22,14 @@ export const Filters = styled.div`
   & > :first-child {
     //Filter Type
     display: flex;
+    overflow: auto;
     & > span {
       margin-right: 0.6rem;
       font-size: 0.75rem;
       cursor: pointer;
 
       &.active {
-        color: ${backgroundColor.purple};
+        color: ${mainColor.purple};
       }
       @media (min-width: 575px) {
         //medium and up screen
@@ -37,7 +38,7 @@ export const Filters = styled.div`
         font-weight: 400;
       }
       &:hover {
-        color: ${backgroundColor.purple};
+        color: ${mainColor.purple};
       }
     }
   }
@@ -55,7 +56,7 @@ export const Filters = styled.div`
         padding-right: 10px;
       }
       &:hover {
-        background-color: ${backgroundColor.purple};
+        background-color: ${mainColor.purple};
         color: white;
         border-color: transparent;
       }
@@ -87,7 +88,7 @@ export const Search = styled.div`
   & > [type="search"] {
     border: none;
     position: relative;
-    padding: 0 30px;
+    padding: 0 10px 0 30px;
     width: 100%;
     color: ${({ theme }) => theme.color};
     background-color: transparent;
@@ -107,25 +108,34 @@ export const Cards = styled.div`
   justify-content: center;
   gap: 15px;
   padding-top: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+
   & > a {
+    border: 2px solid ${mainColor.purple};
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     & > :first-child {
       position: relative;
       overflow: hidden;
+      flex: 0 65%;
+      display: flex;
+      align-items: end;
+      justify-content: center;
       & > img {
         width: 100%;
+        height: 100%;
         transition: all 0.3s;
       }
       .Quickbutton {
         //Quick View Btn
         position: absolute;
         z-index: 999;
-        bottom: -15%;
+        bottom: -30%;
         left: 50%;
         transform: translate(-50%);
         background-color: white;
         color: black;
-
         font-size: 0.9;
         padding: 10px;
         transition: all 0.3s;
@@ -143,13 +153,18 @@ export const Cards = styled.div`
     }
 
     & > :nth-child(2) {
-      padding: 10px 0;
-
+      padding: 0 20px;
       text-align: start;
       font-size: 1rem;
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
+  }
+`;
+
+export const btnLoadMore = css`
+  &.m-y {
+    margin: auto;
   }
 `;

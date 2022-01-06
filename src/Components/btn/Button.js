@@ -1,20 +1,29 @@
 import React from "react";
 import { Wraper } from "./styled";
+
+import CircularProgress from "@mui/material/CircularProgress";
+
 export const Button = ({
   type = "button",
   value = "Click ",
   customClass = "",
   onClick,
+  disabled = false,
   to = "#",
 }) => {
   return (
     <Wraper>
-      <input
-        onClick={onClick}
-        type={type}
-        className={`btnStyle ${customClass}`}
-        value={value}
-      />
+      {disabled ? (
+        <CircularProgress></CircularProgress>
+      ) : (
+        <input
+          disabled={disabled}
+          onClick={onClick}
+          type={type}
+          className={`btnStyle ${customClass}`}
+          value={value}
+        />
+      )}
     </Wraper>
   );
 };

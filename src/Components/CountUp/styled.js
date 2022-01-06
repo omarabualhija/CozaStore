@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor } from "../Shared/masterStyled";
+import { mainColor } from "../../Shared/Theme";
 export const Counter = styled.div`
   display: flex;
   gap: 10px;
@@ -13,7 +13,7 @@ export const Counter = styled.div`
     color: ${({ theme }) => theme.color};
 
     &:hover {
-      background-color: ${backgroundColor.purple};
+      background-color: ${mainColor.purple};
       border: none;
     }
   }
