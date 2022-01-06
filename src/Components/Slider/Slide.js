@@ -40,11 +40,7 @@ export function Slide() {
     >
       {data.map((e) => (
         <div key={e.id}>
-          <img
-            className=" vh100"
-            src="/images/slide-01.jpg"
-            alt="First slide"
-          />
+          <img className=" vh100" src={e.img} alt="First slide" />
           <div className="title">
             <div>{e.mainTitle}</div>
             <div>{e.subTitle}</div>

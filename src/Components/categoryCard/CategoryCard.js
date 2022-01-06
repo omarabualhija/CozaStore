@@ -29,7 +29,7 @@ export function CategoryCard() {
           </div>
           <div>Shope Now</div>
         </Link>
-        <Link to="/Shop">
+        <Link to="CozaStore/Shop">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-03.jpg"
             alt="banner-03"
