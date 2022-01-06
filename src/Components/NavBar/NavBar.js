@@ -22,7 +22,7 @@ export const NavBar = (props) => {
     <Header className={CheckScroll ? "background" : ""}>
       <div className="container">
         <Logo>
-          <Link to="CozaStore">
+          <Link to="/CozaStore">
             <img
               src={`${
                 themetoggle
@@ -35,22 +35,16 @@ export const NavBar = (props) => {
         </Logo>
 
         <Bar className={!ToggleNav ? "toggle" : ""}>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="CozaStore">
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/CozaStore">
             Home
           </NavLink>
-          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="CozaStore/Shop">
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Shop">
             Shop
           </NavLink>
-          <NavLink
-            onClick={() => setToggleNav(!ToggleNav)}
-            to="CozaStore/About"
-          >
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/About">
             About
           </NavLink>
-          <NavLink
-            onClick={() => setToggleNav(!ToggleNav)}
-            to="CozaStore/Contact"
-          >
+          <NavLink onClick={() => setToggleNav(!ToggleNav)} to="/Contact">
             Contact
           </NavLink>
         </Bar>
@@ -60,7 +54,7 @@ export const NavBar = (props) => {
             onClick={() => dispatchtheme(themeAction())}
             className={themetoggle ? `fas fa-sun` : `far fa-moon`}
           ></div>
-          <Link to="CozaStore/CheckOut" className="fas fa-shopping-cart"></Link>
+          <Link to="/CheckOut" className="fas fa-shopping-cart"></Link>
           <div className="far fa-heart"></div>
           <div
             onClick={() => setToggleNav(!ToggleNav)}

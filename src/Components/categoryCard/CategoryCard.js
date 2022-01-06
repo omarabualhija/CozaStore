@@ -17,7 +17,7 @@ export function CategoryCard() {
           <div>Shope Now</div>
         </Link>
 
-        <Link to="CozaStore/Shop">
+        <Link to="/Shop">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-02.jpg"
             alt="banner-02"
@@ -29,7 +29,7 @@ export function CategoryCard() {
           </div>
           <div>Shope Now</div>
         </Link>
-        <Link to="CozaStore/Shop">
+        <Link to="/Shop">
           <img
             src="https://omarabualhija.github.io/CozaStore/images/banner-03.jpg"
             alt="banner-03"

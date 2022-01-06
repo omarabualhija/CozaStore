@@ -8,19 +8,19 @@ export function Slide() {
       id: 1,
       mainTitle: "Women Collection 2021",
       subTitle: "NEW SEASON",
-      img: "/images/slide-01.jpg",
+      img: "images/slide-01.jpg",
     },
     {
       id: 2,
       mainTitle: "Men Collection 2021",
       subTitle: "JACKETS & COATS",
-      img: "/images/slide-02.jpg",
+      img: "images/slide-02.jpg",
     },
     {
       id: 3,
       mainTitle: "Men Collection 2021",
       subTitle: "NEW ARRIVALS",
-      img: "/images/slide-03.jpg",
+      img: "images/slide-03.jpg",
     },
   ];
   const Slider = () => (
