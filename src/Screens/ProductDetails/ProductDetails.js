@@ -19,7 +19,6 @@ export function ProductDetails() {
   const { loading: LoadingToAddProduct } = useSelector(
     (state) => state.addToCart
   );
-  console.log(LoadingToAddProduct);
   const [option, setOption] = useState({
     id: id,
     Color: "",
@@ -48,7 +47,6 @@ export function ProductDetails() {
 
   const handelAddToCart = () => {
     if (option.Size.length !== 0 && option.Color.length !== 0) {
-      console.log(option);
       dispatch(addToCart(option));
     } else setError(true);
   };
@@ -106,12 +104,11 @@ export function ProductDetails() {
                   value="ADD TO CART"
                 />
               </Details>
-              <Description>
-                <h3>DESCRIPTION</h3>
-               
-              </Description>
-               <div className="container">{product.description}</div>
             </div>
+            <Description className="container">
+              <h3>DESCRIPTION</h3>
+              <div>{product.description}</div>
+            </Description>
           </PRODUCTDETAILS>
         </>
       )}

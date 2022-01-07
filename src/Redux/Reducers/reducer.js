@@ -23,15 +23,12 @@ const initProduct = { data: [], loading: true };
 export const productDataReducer = (state = initProduct, action) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
-      console.log(action.payload);
       return { ...state, loading: true };
 
     case PRODUCT_LIST_SUCCESS:
-      console.log(action.payload);
       return { ...state, data: [...action.payload], loading: false };
 
     case PRODUCT_LIST_FAIL:
-      console.log(action.payload);
       return { ...state, data: [...action.payload], loading: false };
 
     default:

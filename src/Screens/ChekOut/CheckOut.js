@@ -7,8 +7,6 @@ export function CheckOut() {
   const dispatch = useDispatch();
   const CeckOutProducts = useSelector((state) => state.addToCart.items);
 
-  console.log(CeckOutProducts);
-
   const DeletItem = (id) => {
     dispatch({ type: REMOVE_FROM_CART, payload: id });
   };
